@@ -1,5 +1,7 @@
 # Grep
 
+**"ใช้หาข้อความที่อยู่ในไฟล์"**
+
 ใช้ในการ print line ของ file ที่ match กับ pattern
 
 syntax
