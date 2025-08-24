@@ -1,0 +1,2 @@
+cat: d.txt: No such file or directory
+cat: dg.txt: No such file or directory
