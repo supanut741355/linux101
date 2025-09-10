@@ -23,5 +23,48 @@ $lsblk
   - major -> บอก type ของ block storage เช่น major = 8 คือ SCSI Disk หรือก็คือ SD ข้างต้นนั้นดแง sda, sdb, sdc คือ 3 disk
   - minor -> บอก
 
+---
+
+Disk Partition
+
+Disk ทั้งลูก สามารถถูกแบ่งออกมาเป็นส่วนย่อยๆ / พื้นที่ย่อยๆ ได้ ซึ่งจะเรียกว่า Partition
+จากตัวอย่าง sda
+            |-sda1
+            |-sda2
+            |-sda3
+
+            เราจะมี 3 Partition 
+            Partition จะเป็นพื้นที่ ที่ใช้ในจุดประสงค์ที่เฉพาะเจาะจง
+
+            เช่น จากรูป
+
+            sda1        mount: /boot/efi
+            sda2        mount: /media/MM/data
+            sda3        mount: /
+
+            Partition sad1 ถูก mount ไปที่ /boot/efi จะใช้ในการจัดการการ boot และ boot_loader สำหรับ OS
+            Partition sad2 ถูก mount ไปที่ /media/MM/data จะใช้ในการเก็บข้อมูล backup
+            Partition sad3 ถูก mount ไปที่ / จะใช้เป็น root Partition
+
+**จริงๆ แล้วเราไม่ต้องแบ่ง Partition เลยก็ได้ (ใช้เป็น entrie disk) 
+แต่ recommend ให้แบ่ง Partition ดีกว่า เพราะใช้เก็บข้อมูล และการทำหน้าที่เฉพาะ + ความยืดหยุ่น
+
+
+ข้อมูลของ Partition จะถูกเก็บที่ Partition table -> สามารถถูกเรียกดูได้โดยใช้ 
+
+```
+$ lsblk
+```
+
+หรือ
+```
+$ fdisk 
+
+$ fdisk -l /dev/sda 
+```
+
+
+ซึ่ง fdisk ให้ข้อมูลได้เยอะและละเอียดกว่า lsblk
+และยังสามารถใช้ในการ create และ delete Partition ได้อีกด้วย
 
 
