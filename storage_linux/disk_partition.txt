@@ -1,0 +1,27 @@
+Block Device and Block storage
+
+เริ่มด้วยการรู้จักกับคำว่า Block Device ซะก่อน
+ฺฺBlock Device คือ HW ที่สามารถเก็บ data ได้ เช่น HDD หรือ SSD
+
+ใน Block Device ก็คือ Block storage เพราะ data จะถูกเก็บ และเขียนลงใน block space หรือ chunck
+
+ใน linux เราสามารถดูได้ว่าเครื่องเราต่อ block device และ block storage มีค่าอะไรบ้าง ใช้ 
+
+```
+$lsblk
+```
+
+เช่น 
+  sda
+    |- sda1
+    |- sda2
+    |- sda3
+
+  หมายความว่า sda คือ disk 1 ลูก, ส่วน sda1, sda2 และ sda3 คือ Partition ของ disk นั้น
+
+  โดยข้อมูลจาก lsblk จะบอกเลข 2 ตัว
+  - major -> บอก type ของ block storage เช่น major = 8 คือ SCSI Disk หรือก็คือ SD ข้างต้นนั้นดแง sda, sdb, sdc คือ 3 disk
+  - minor -> บอก
+
+
+
