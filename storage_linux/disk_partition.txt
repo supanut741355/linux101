@@ -67,4 +67,9 @@ $ fdisk -l /dev/sda
 ซึ่ง fdisk ให้ข้อมูลได้เยอะและละเอียดกว่า lsblk
 และยังสามารถใช้ในการ create และ delete Partition ได้อีกด้วย
 
+---
 
+Partition type
+1. Primary disk -> ใช้ในการ boot ตัว OS 
+2. Extended disk -> ใช้ในการ host ตัว logical disk 
+3. Logical disk -> ถูกสร้างใน extened Partition
