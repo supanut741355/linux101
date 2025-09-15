@@ -1,5 +1,7 @@
 Block Device and Block storage
 
+**block storage จะอยู่ภายใต้ /dev/
+
 เริ่มด้วยการรู้จักกับคำว่า Block Device ซะก่อน
 ฺฺBlock Device คือ HW ที่สามารถเก็บ data ได้ เช่น HDD หรือ SSD
 
@@ -78,3 +80,16 @@ Partition type
 Partition scheme
 1. MBR (master boot record) -> limit 4 primary and 2 TB
 2. GPT (GUID partition table ) -> unlimit primary 
+
+
+Create Partition
+
+```
+$ gdisk /dev/sdb
+```
+
+
+list partition
+```
+$ sudo fdisk -l /dev/sdb
+```
