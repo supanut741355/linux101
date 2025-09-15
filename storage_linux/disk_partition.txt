@@ -73,3 +73,8 @@ Partition type
 1. Primary disk -> ใช้ในการ boot ตัว OS 
 2. Extended disk -> ใช้ในการ host ตัว logical disk 
 3. Logical disk -> ถูกสร้างใน extened Partition
+
+
+Partition scheme
+1. MBR (master boot record) -> limit 4 primary and 2 TB
+2. GPT (GUID partition table ) -> unlimit primary 
