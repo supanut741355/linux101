@@ -1,0 +1,23 @@
+File system (fs)
+
+disk และ partition ถูกเห็นโดย linux kernel ในถานะ raw disk
+
+ในการเขียนข้อมูลลง disk หรือ partition -> เราจะต้องสร้าง file system ก่อน 
+
+file system จะเป็นตัวระบุ data ที่ถูกเก็บลง disk
+
+หลังจากสร้าง file system -> เราจะต้อง mount มันไปยัง directory นั่นทำให้เราสามารถ read และ write data ได้
+
+FS มีหลายชนิด
+1. Extended file system (Ext2, Ext4)
+
+Ext2 และ Ext3 มี file size limit ที่ 2 TB และ volumn size ที่ 4 TB: เหมาะสำหรับ Reliable storing data
+EXT2 VS EXT3
+-Journaling
+  ext2: ❌ ไม่มี journaling → เวลา system crash หรือไฟดับ ต้องใช้ fsck ตรวจสอบและซ่อมแซมไฟล์ ซึ่งใช้เวลานานมากถ้า filesystem มีขนาดใหญ่
+  ext3: ✅ มี journaling → เก็บบันทึกการเปลี่ยนแปลงก่อนเขียนจริง ทำให้ recovery หลัง crash เร็วขึ้นและโอกาส corruption ลดลง
+
+EXT4 คือตัว improve จาก EXT3 เป็นตัวที่ดีสุดในปัจจุบัน -> มัน support file size ได้ถึง 16TB
+และ volume size ได้ถึง 1 Exa B
+
+!!! EXT4 มี backwork compattible กับ EXT3 (หมายถึงว่า FS EXT4 สามารถ mount ไปที่ EXT3 และ EXT2 ได้)
