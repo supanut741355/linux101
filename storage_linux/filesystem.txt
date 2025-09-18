@@ -21,3 +21,32 @@ EXT4 คือตัว improve จาก EXT3 เป็นตัวที่ด
 และ volume size ได้ถึง 1 Exa B
 
 !!! EXT4 มี backwork compattible กับ EXT3 (หมายถึงว่า FS EXT4 สามารถ mount ไปที่ EXT3 และ EXT2 ได้)
+
+---
+
+Woring with EXT4
+เรามี disk /dev/sdb เราจะสร้าง EXT4
+
+สร้าง FS ชนิด ext4
+```
+$ mkfs.ext4 /dev/sdb1
+```
+
+สร้าง directory /mnt/ext4
+```
+$ mkdir /mnt/ext4
+```
+
+mount ตัว partition sdb1 ไปที่ /mnt/ext4
+```
+$ mount /dev/sdb1 /mnt/ext4
+```
+
+เช็คการ mount
+```
+$ mount | grep /dev/sdb1
+```
+หรือ
+```
+df -hP | grep /dev/sdb1 
+```
