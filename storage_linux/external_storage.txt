@@ -1,0 +1,31 @@
+External Storage: คือ device ที่ใช้ในการเก็บข้อมูลภายนอก ที่ไม่ใช่ส่วนหนึ่งของ disk ภายในของเครื่องหลัก ซึ่งเชื่อมเข้ามาภายหลัง
+- USB
+- SD Card
+- External SSD / HDD
+
+Q:ทำไมเราต้องใช้ external storage ???
+A:เอาไว้เก็บข้อมูล เช่น ข้อมูล db 
+
+External storage มี 3 types:
+DAS: direct attach storage, 
+NAS: network attach storage, 
+SAN: storage area network
+
+
+
+DAS: (ต่อตรง)
+ตัว HOST (VM) จะต่อไปที่ DAS (อารมเหมือน Block device) จะไม่มี network หรือ filewall กั้น
++ DAS เร็วกว่า NAS
+- DAS ต่อได้แค่ signle server (dedicate)
+
+
+NAS: (ต่อผ่าน network)
+จะตรงข้ามกับ DAS, NAS เป็น device ที่จะมีพื้นที่ที่ให้ host มาจองใช้
+ระหว่าง HOST และ storage จะคุยกันผ่าน Network -> ระยะทางระหว่าง 2 อุปกรณ์ไม่มีผลต่อ performance เพราะอยู่ใน data center เดียวกัน
+
+** NAS เอาไว้ทำ Centralize Share Storage ที่ต้องการ access พร้อมๆ กันจากหลาย host
+
+
+SAN: 
+เป็น block storage สำหรับ enterprise -> ตอบโจทย์เรื่อง high thoughput และ low latency
+Host และ Storage device จะคุยกันผ่าน LUN (logical unit number) หรือพวก Switch / fiber channel
