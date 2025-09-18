@@ -50,3 +50,8 @@ $ mount | grep /dev/sdb1
 ```
 df -hP | grep /dev/sdb1 
 ```
+---
+FSTAB
+
+ทำให้ mount ยังใช้งานได้ หลังจาก system มีการ reboot
+ด้วยการ เพิ่ม entry ไปยัง /etc/fstab
