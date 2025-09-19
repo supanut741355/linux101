@@ -1,0 +1,9 @@
+Network File system
+
+ไม่เหมือน block device -> NFS ไม่ต้องเก็บ data ใน block 
+แต่จะเก็บ data ในรุปของ file แทน
+
+nfs จะทำงานอยู่ที่ server client
+
+nfs รันผ่าน tcp นั่นหมายถึงการส่งข้อมูลระหว่างกัน ระหว่าง client และ server จะผ่านการ authen
+หรือจะผ่าน UDP ก็ได้
