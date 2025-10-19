@@ -18,3 +18,5 @@ Redirection คือการนำ standardXXX ไปทำลงไฟล์
 (แวะ) pipe ( | ) สามารถใช้ chain command ได้
 
  "เอา output ของ command_1 มาเป็น input ของ command_2"
+
+ 
