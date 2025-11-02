@@ -59,7 +59,11 @@ Install package with update (chain)
 
 **Search** package
 ```
+  //both search match name and description
   $ sudo apt search [PACKAGE_NAME]
+
+  //search only match name
+  $ sudo apt search --names-only [PACKAGE_NAME]
 ```
 
 **Show** package info
