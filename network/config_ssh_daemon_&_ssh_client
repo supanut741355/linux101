@@ -1,0 +1,20 @@
+### SSH daemon
+$ sudo vi /etc/ssh/sshd_config
+
+$ sudo systemctl restart ssh.service
+
+$ ssh-keygen
+
+$ ssh-copy-id [USERNAME]@[HOST_IP/HOST_NAME]
+
+$ sudo ssh-keygen -R [HOST_IP]
+
+
+### SSH client
+
+$ ip -c a
+
+$ sudo vi ~/.ssh/config
+
+
+$ sudo vi /etc/ssh/ssh_config/99-custom-setting.conf
