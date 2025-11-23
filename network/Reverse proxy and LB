@@ -1,0 +1,20 @@
+### Config Reverse proxy and LB
+
+Basic Client Server
+
+Reverse proxy
+- Create Reverse proxy via Nginx (LAB)
+- Handle maintanence process
+- Client not know backend server's IP
+- Modify HTTP to HTTPS
+- Caching
+- Header modify
+- Authentication 
+
+
+LB
+- Create Loadbalancer via Nginx (LAB)
+- Handle health check
+- If web server down, the request will not sent
+- Implement HA and Horizontal scale
+
