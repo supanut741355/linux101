@@ -1,0 +1,53 @@
+Basic account info
+$ whoami
+$ id
+$ cat /etc/passwd | grep [USERNAME]
+
+
+List all users
+$ cat /etc/passwd
+
+
+Help
+$ adduser —help
+$ usermod —help
+$ deluser —help
+$ passwd --help
+$ chage --help
+
+
+Create User
+$ sudo adduser alice
+
+Create user with custom 
+$ sudo adduser —system —no-create-home alice
+$ sudo adduser —uid 1001 alice
+$ sudo adduser —home /home/alice_space alice
+$ sudo adduser —shell /bin/zsh alice
+
+
+Set and reset password
+$ sudo passwd alice
+
+Edit user
+$ sudo usermod  -d /home/alice_universe -m alice
+$ sudo usermod -l alex alice
+$ sudo usermod -s /bin/zsh alice
+$ sudo usermod -L alice
+$ sudo usermod -U alice
+$ sudo usermod -e 2000-01-01 alice
+
+Delete user
+$ sudo deluser alice
+$ sudo deluser -r alice
+
+Expire password and expire account
+$ sudo chage -d 30 alice 
+$ sudo chage -d -1 alice
+$ sudo chage -M 30 alice
+$ sudo chage -M -1 alice
+
+
+
+
+
