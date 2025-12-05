@@ -1,0 +1,21 @@
+Config file
+/etc/security/limits.conf
+
+output
+|<domian> | <type> |  <item> | <value>
++---------+--------+---------+---------
+|[user]   | hard   |  nproc  | 20
+|@[group] | soft   |  cpu    | 1
+
+3type
+- hard -> limit by admin cannot override
+- soft -> limit by system can inc but can't more than hard
+- - -> specific both hard and limit
+
+3 item
+- nproc => number of process 
+- fsize => file size (KB)
+- cpu => cpu (core)
+
+
+$ ulimit -a
