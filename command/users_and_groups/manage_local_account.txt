@@ -13,6 +13,9 @@ $ cat /etc/passwd
 
 (R) Find specific user
 $ cat /etc/passwd | grep -i [USERANME]
+or
+$ grep -i [USERNAME] /etc/passwd
+
 
 
 Help
@@ -53,7 +56,7 @@ $ sudo chage -d 30 alice
 $ sudo chage -d -1 alice
 $ sudo chage -M 30 alice
 $ sudo chage -M -1 alice
-
+$ sudo chage -W 2 alice
 
 
 

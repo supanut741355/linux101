@@ -12,6 +12,8 @@ $ sudo cat /etc/group
 
 (R) Find specific group
 $ sudo cat /etc/group | grep -i [GROUPNAME]
+or
+$ grep -i "[GROUPNAME]" /etc/group
 
 Find that user in any group
 $ sudo groups [USERNAME]
