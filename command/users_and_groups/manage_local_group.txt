@@ -1,0 +1,37 @@
+Config directory
+/etc/group
+
+Help
+$ gpasswd --help
+$ groupadd --help
+$ groupmod --help
+$ groupdel --help
+
+(R) List all groups 
+$ sudo cat /etc/group
+
+(R) Find specific group
+$ sudo cat /etc/group | grep -i [GROUPNAME]
+
+Find that user in any group
+$ sudo groups [USERNAME]
+
+(C) Create group
+$ sudo groupadd [GROUPNAME]
+
+(U) Edit group
+$ sudo groupmod -n [MEW_GROUPNAME] [CURR_GROUPNAME]
+
+(D) Delete group
+$ sudo groupdel [GROUPNAME]
+
+
+Add user to group
+$ sudo gpasswd -aG [GROUPNAME] [TARGET_USER]
+
+Delete user from group
+$ sudo gpasswd -d [GROUPNAME] [TARGET_USER]
+
+
+*** Change primary group of user
+$ sudo usermod --gid [NEW_PRIMARY_GROUP] [USERNAME]

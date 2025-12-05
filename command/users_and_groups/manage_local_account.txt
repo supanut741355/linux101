@@ -1,11 +1,18 @@
+Config directory
+/etc/passwd
+
+
 Basic account info
 $ whoami
 $ id
 $ cat /etc/passwd | grep [USERNAME]
 
 
-List all users
+(R) List all users
 $ cat /etc/passwd
+
+(R) Find specific user
+$ cat /etc/passwd | grep -i [USERANME]
 
 
 Help
@@ -16,7 +23,7 @@ $ passwd --help
 $ chage --help
 
 
-Create User
+(C) Create User
 $ sudo adduser alice
 
 Create user with custom 
@@ -29,7 +36,7 @@ $ sudo adduser —shell /bin/zsh alice
 Set and reset password
 $ sudo passwd alice
 
-Edit user
+(U) Edit user
 $ sudo usermod  -d /home/alice_universe -m alice
 $ sudo usermod -l alex alice
 $ sudo usermod -s /bin/zsh alice
@@ -37,7 +44,7 @@ $ sudo usermod -L alice
 $ sudo usermod -U alice
 $ sudo usermod -e 2000-01-01 alice
 
-Delete user
+(D) Delete user
 $ sudo deluser alice
 $ sudo deluser -r alice
 
