@@ -1,0 +1,9 @@
+Skekelton or Blue print of every profile
+/etc/skel
+
+
+/etc/skel/.bashrc
+
+PATH="$HOME/.local/bin:$HOME/bin:opt/bin/$PATH"
+
+
