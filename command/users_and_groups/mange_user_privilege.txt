@@ -11,7 +11,7 @@ content
 eg.
 
 nut         ALL=(ALL) ALL
-%developers ALL=(ALL) ALL
+@developers ALL=(ALL) ALL
 
 alice       ALL=(bob:ALL) ALL
 alice       ALL=(ALL:business) ALL
