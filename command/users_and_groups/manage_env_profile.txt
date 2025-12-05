@@ -1,0 +1,14 @@
+# List env var of user
+$ env
+
+# Set env profile
+$ export [ENV_VAR]=[VALUE]
+
+#Display specific env var
+$ echo "$[ENV_VAR]"
+
+#Create permanent env var
+$ sudo vi /etc/environment
+
+#Create to run script at
+$ sudo vi /etc/profile.d/xxxx
