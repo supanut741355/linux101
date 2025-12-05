@@ -18,4 +18,6 @@ output
 - cpu => cpu (core)
 
 
-$ ulimit -a
+$ ulimit -a -> list all resource limit ของ shell
+
+$ ulimit -u 5000 -> set max user process (-u) to 5000
