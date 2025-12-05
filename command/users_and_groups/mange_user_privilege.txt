@@ -1,0 +1,20 @@
+Config Sudo file
+/etc/sudoers
+
+Edit sudo file
+$ sudo visudo
+
+content
+[user]      [HOST]=([USER]:[GROUP]) CMD
+%[GROUP]    [HOST]=([USER]:[GROUP]) CMD
+
+eg.
+
+nut         ALL=(ALL) ALL
+%developers ALL=(ALL) ALL
+
+alice       ALL=(bob:ALL) ALL
+alice       ALL=(ALL:business) ALL
+alice       ALL=(ALL) /bin/systemctl
+alice       ALL=(ALL) NOPASSWD: ALL
+alice       ALL=(ALL) NOPASSWD: /ls
