@@ -1,0 +1,67 @@
+tool UFW
+$ sudo ufw status
+$ sudo ufw status verbose
+$ sudo ufw status numbered
+
+$ sudo ufw enable 
+
+$ sudo ufw allow [PORT]
+eg.
+$ sudo ufw allow 22
+
+$ sudo ufw allow [PORt]/[PROTOCOL]
+eg.
+$ sudo ufw allow 22/tcp
+
+#Config Firewall
+
+------------------Incoming network------------------------------
+
+<Allow IN rule> 
+
+(fix)
+# create firewall rule allow ip 10.0.0.192 can connect to this server at any port
+$ sudo ufw allow in from 10.0.0.192
+
+# create firewall rule allow ip 10.0.0.192 can connect to this server at port 22
+$ sudo ufw allow in from 10.0.0.192 to any port 22
+
+
+(range)
+# create firewall rule allow ip range  10.0.1.0/24 can connect to this server at any port
+$ sudo ufw allow in from 10.0.0.1/24
+
+# create firewall rule allow ip range 10.0.1.0/24 can connect to this server at port 22
+$ sudo ufw allow in from 10.0.0.1/24 to any port 22
+
+
+delete rule
+$ sudi ufw delete index_rule
+$ sudo ufw delete allow port 22
+
+<Deny In rule> 
+(fix)
+$ sudo ufw deny from 10.0.0.37
+
+(range)
+$ sudo ufw deny from 10.0.1.0/24
+
+
+
+priority rule order -> insert position
+$ sudo ufw insert 1 allow in from 10.0.0.37
+
+
+
+------------------Outgoing network------------------------------
+
+<Allow out>
+$ sudo ufw allow out on [NETOWRK_INTERFACE] to [IP]
+eng
+$ sudo ufw allow out on enp0s3 to 8.8.8.8
+
+
+
+sudo ufw allow in on enp0s3 from 10.0.0.37 to 10.0.0.100 proto tcp
+ 
+sudo ufw allow out on enp0s3 from 10.0.0.100 to 10.0.0.37 proto tcp 
