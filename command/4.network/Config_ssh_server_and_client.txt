@@ -1,0 +1,61 @@
+---------------------------------SSH server---------------------------------
+$ sudo vi /etc/ssh/sshd_config -> $ sudo vi /etc/ssh/sshd_config.d/99-myconfig.conf
+content
+(global)
+Port 22
+AddressFamily inet
+ListenAddress [IPv4]
+PermitRootLogin prohibit-password
+                no
+
+PasswordAuthentication yes    -> can login with username password
+                       no     -> can't login with username password
+
+KbdInteract_____authen yes    -> login ด้วย keyboard
+                       no     ->  ไม่ login ด้วย keyboard
+
+X11forwarding yes             -> forward graphic
+
+
+(specific user)
+Match user [USERNAME]
+  Port 22
+  PasswordAuthentication
+  KbdInteract
+  X11Forward
+
+
+$ sudo systemctl restart sshd.service
+
+---------------------------------SSH Client---------------------------------
+~/.ssh
+/home/[USER]/.ssh
+
+#config specific user login
+$ sudo vi /home/[USER]/.ssh/config
+
+content
+Host ubuntu-vm
+  Hostname 10.0.0.187
+  Port 22
+  User nutx
+
+$ ssh ubuntu-vm
+
+
+$ config ssh client
+$ sudo vi /etc/ssh/ssh_config -> /etc/ssh/ssh_config.d/99-myconfig.conf
+
+
+SSH keygen
+$ ssh-keygen
+
+#copy public key to server
+$ sudo ssh-copy-id [USER]@[HOST_IP]
+
+#shell with out password
+$ ssh [USER]@[HOST_IP]
+
+
+#Get public key
+$ cat ~/.ssh/authorize_key
