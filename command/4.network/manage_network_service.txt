@@ -1,0 +1,25 @@
+Util to manage  -> ss
+$ ss
+
+$ ss --help
+
+# list all network service that ready to accept incoming connetion
+$ ss -tunlp (main)
+
+
+# check status service
+$ sudo systemctl status [DAEMON_SERVICE]
+eg. 
+$ sudo systemctl status mariadb.service
+$ sudo systemctl status nginx.service
+$ sudo systemctl status ssh.service
+
+
+# stop service
+$ sudo systemctl stop [DAEMON_SERVICE]
+
+# service start when boot
+$ sudo systemctl enable [DAEMON_SERVICE]
+
+# service not start when boot
+$ sudo systemctl disable [DAEMON_SERVICE]
