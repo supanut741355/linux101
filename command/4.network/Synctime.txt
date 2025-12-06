@@ -1,0 +1,25 @@
+Time in linux
+
+# get current timedate 
+$ timedatectl
+
+# list all time zone
+$ timedatectl list-timezones
+
+# set time zone
+$ timedatectl set-timezone [TIME_ZONE]
+
+
+
+Sync time date with NTP server
+
+$ sudo apt install systemd-timesyncd
+
+#config 
+$ sudo vi /etc/systemd/timesyncd.conf
+
+content
+NTP=[NTP_HOST]
+
+$ Apply config
+$ sudo systemctl restart systemd-timesyncd.service
