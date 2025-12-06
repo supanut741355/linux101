@@ -1,0 +1,62 @@
+Reverse proxy & LB -> tool = nginx
+
+#install tool
+$ sudo apt install nginx
+
+
+------------------------------------REverse Proxy------------------------------------------
+
+#Config
+$ sudo vi /etc/nginx/sites-available/proxy.conf
+
+content
+server {
+  listen 80;
+  location / {
+    proxy_pass: http://1.1.1.;
+  }
+}
+
+#debug / validate config
+$ sudo nginx -t
+
+#Apply to use
+$ sudo ln -s /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/proxy.conf
+
+
+#Delete default nginx web config
+$ sudo rm /etc/nginx/sites-enabled/default
+
+
+#Reload config nginx
+$ sudo systemctl restart nginx.service
+
+------------------------------------Load balancer------------------------------------------
+#Create config
+$ sudo vi /etc/nginx/sites-available/lb.conf
+
+content
+upstream myservers{
+  least_conn;
+  server 1.2.3.4 weight=3;
+  server 5.6.7.8 down;
+  server 9.10.11.12;
+  server 10.20.30.40 backup;
+}
+
+server {
+  listen 80;
+  location / {
+    proxy_pass: http://myservers;
+  }
+}
+
+#debug / validate config
+$ sudo nginx -t
+
+#Apply to use
+$ sudo ln -s /etc/nginx/sites-available/lb.conf /etc/nginx/sites-enabled/lb.conf
+
+
+
+
