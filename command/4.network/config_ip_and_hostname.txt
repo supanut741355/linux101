@@ -1,0 +1,95 @@
+------- Config IP, name server, DNS, Route -------
+# List all network interface
+$ ip link
+
+# Set status of specific network interface
+$ ip link set dev [NETOWRK_INTERFACE] UP/DOWN
+
+
+# List all ip of network interface
+$ ip -c a
+
+
+<Temporary config -> reboot = config gone>
+# Manual add ip to network interface
+$ sudo ip addr add [IPV4] dev [NETOWRK_INTERFACE]
+$ sudo ip addr add [IPV6] dev [NETOWRK_INTERFACE]
+
+# Manual delete ip to network interface
+$ sudo ip addr delete [IPV4] dev [NETOWRK_INTERFACE]
+$ sudo ip addr delete [IPV6] dev [NETOWRK_INTERFACE]
+
+
+<Permanent config> -> Netplan
+$ man netplan
+
+ีuse netplan tool => netplan will read config file and apply to systemd-networkd
+/etc/netplan
+
+# list netplan config file of network interface
+$ sudo netplan get [NETOWRK_INTERFACE]
+
+# Config netplan config file
+$ sudo vi /etc/netplan/99-myconfig.yaml
+
+# find template of netplan config at /usr/share/doc/netplan/example
+$ cat /usr/share/doc/netplan/example/static.yaml
+
+
+content eg.
+
+network:
+  version: 2
+  ethernets:
+    enps03:
+      dhcp4: false
+      dhcp6: false
+      addresses:
+        - 10.0.0.9/24
+        - fe80::921be:eff:fe3d:abcd/64
+      nameserver:
+        addresses:
+          - 8.8.8.8
+          - 1.1.1.1
+      route:
+        - to: 192.168.0.0/24
+          via: 10.0.0.100
+        - to: default
+          via: 10.0.0.1
+        
+
+
+
+# update permission of 99-myconfig.yaml
+$ sudo chmod 600 /etc/netplan/99-myconfig.yaml
+
+# after config done -> try config and apply
+$ sudo netplan try --timeout 30
+$ sudo netplan apply
+
+# list all route
+$ ip route
+
+# list all DNS 
+$ sudo resolvectl status
+
+# Config DNS for global
+$ sudo vi /etc/systemd/resolved.conf
+
+content eg.
+DNS=1.1.1.1 8.8.8.8
+
+# Restart service
+$ sudo systemctl restart systemd-resolved.service
+
+
+------- Config Host name -------
+/etc/hosts
+
+# config host name
+$ sudo vi /etc/hosts
+content
+127.0.123.123 dbserver
+
+# debug host name
+$ ping dbserver
