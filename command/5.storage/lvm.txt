@@ -1,0 +1,62 @@
+tool -> lvm2
+components:
+- PV (Physical volumn)
+- VG (Volumn group)
+- LV (Logical volumn)
+- PE
+
+$ man lvm
+
+$ lvmdiskscan 
+
+
+---------------------------------PV---------------------------------
+(virtual physical device)
+
+#Create vitual of physical disk
+$ sudo pv create [DISK1] [DISK2] ... [DISKN]
+
+#List PV
+$ sudo pvs
+
+
+---------------------------------VG---------------------------------
+(group of pv)
+
+#Create VG by adding PV
+$ sudo vgcreate [VG_NAME] [PV1] [PV2] [PV3]
+
+#List VG
+$ sudo vgs
+
+#Extend VG size (add more PV)
+$ sudo vgextend [VG_NAME] [PV4]
+
+#Reduce VG size (remove PV)
+$ sudo vgremove [VG_NAME] [PV_TARGET]
+
+---------------------------------LV---------------------------------
+(partition of VG)
+
+#Create VG's partition
+$ sudo lvcreate --size [NUMBER]G --name [PARTITION_NAME] [VG_NAME]
+
+#List LV
+$ sudo lvs
+
+$ sudo lvdisplay
+
+
+#Resize (extend)
+$ sudo lvresize --extends 100%VG [VG_NAME]/[PARTITION_NAME]
+
+#Resize (shink)
+$ sudo lvresize --size [NUM]G [VG_NAME]/[PARTITION_NAME]
+
+# Create file system on LV
+$ sudo mkfs.ext4 /dev/[VG_NAME]/[PARTITION_NAME]
+
+# Resize of partition that create fs
+$ sudo lvresize --resizefs [NUM]G [VG_NAME]/[PARTITION_NAME]
+
+
