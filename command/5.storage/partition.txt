@@ -1,0 +1,20 @@
+# List disk
+$ lsblk
+
+# Manage / plan  -> tool => fdisk (built-in)
+$ sudo cfdisk [DISK]
+eg.
+
+$ sudo cfdisk /dev/sde
+
+Config with cfdisk UI
+[NEW] -> create new partition with size
+[RESIZE] -> resize partition size
+[DELETE] -> delete partition
+[TYPE] -> select type of partition
+[WRITE] -> save partition config
+
+
+
+
+
