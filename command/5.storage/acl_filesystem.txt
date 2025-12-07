@@ -1,0 +1,45 @@
+Tool ->  acl
+$ sudo apt install acl
+
+
+Actions:
+r   : read
+rw  : read write
+rwx : read write execute
+--- : no permission
+
+#Set ACL User level permission of file
+$ sudo setfacl --modify user:[USER_NAME]:[ACTION] [FILE]
+eg.
+$ sudo setfacl --modify user:bob:rw /home/nutx/greeting.txt
+
+# ls -l /home/nutx/greeting.txt
+-rw-rw----+
+
+#Get config acl
+$ sudo getfacl [FILE]
+eg.
+$ sudo getfacl /home/nut/greeting.txt
+
+
+#Set ACL Group level permission of file
+$ sudo setfacl --modify group:[GROUP_NAME]:[ACTION] [FILE]
+eg.
+$ sudo setfacl --modify group:staff:r /workspace/projecta/main.conf
+
+
+#Remove ACL
+$ sudo setfact --remove user:[USER_NAME] [file]
+$ sudo setfact --remove group:[GROUP_NAME] [file]
+
+remove all
+$ sudo setfact --remove-all [file]
+
+
+#Set ACL in file in directory (recursive)
+$ sudo setfact --recursive -m user:[USER_NAME] [dir]
+eg.
+$ sudo setfacl --recursive -m user:nutx /workspace
+
+# Remove ACL recursive
+$ sudo setfacl --recursive --remove user:[USER_NAME] [dir]
