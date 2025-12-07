@@ -1,0 +1,41 @@
+Tool -> sysstat
+$ sudo apt install sysstat
+
+2 stat -> iostat, pidstat
+
+$man iostat
+
+$ man pidstat
+
+------------------------------iostat------------------------------
+# list storage performance
+$ iostat
+
+$ iostat -d 
+
+$ iostat -h
+
+$ iostat -p ALL
+
+$ iostat -p sda
+
+$ iostat [INTERVAL]
+
+
+Storage Over use
+- Read very often
+- Read write large volume of data
+
+------------------------------pidstat------------------------------
+
+$ pidstat
+
+$ pidstat -d [INTREVAL]
+
+$ pidstat -d --human
+
+
+-----------------Device mapper (dm) map of LVM---------------------
+
+
+
