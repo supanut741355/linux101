@@ -1,0 +1,46 @@
+Create fs (XFS, EXT4)
+
+help -> Only man
+$ man mkfs.xfs 
+$ man mkfs.ext4
+
+$ sudo mkfs.ext4
+
+XFS
+# creat fs
+$ sudo mkfs.xfs [PARTITION]
+eg.
+
+$ sudo mkfs.xfs /dev/sde1
+
+# option label with -l
+$ sudo mkfs.xfs -L "fs1" /dev/sde1
+
+# option force apply with -f
+$ sudo mkfs.xfs -f -L "fs1" /dev/sde1
+
+# option inode size
+$ sudo mkfs.xfs -i --size=512 -f -L "fs1" /dev/sde1
+
+$ xfs + TAB + TAB
+
+---
+
+EXT4
+# create fs
+$ sudo mkfs.ext4 [PARTITION]
+eg.
+
+$ sudo mkfs.ext4 /dev/sde2
+
+# option label -> -l
+
+# option number of inode -> -N
+
+$ sudo mkfs.ext4 -N 500000 -L "fs2" /dev/sde2
+
+
+
+Check / Debug 
+$ sudo cfdsik /dev/sde
+

@@ -1,4 +1,4 @@
-# List disk
+1# List disk
 $ lsblk
 
 # Manage / plan  -> tool => fdisk (built-in)
