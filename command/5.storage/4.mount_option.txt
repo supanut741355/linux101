@@ -1,0 +1,32 @@
+List mount fs better than $ lsblk
+$ findmnt -t ext4,xfs
+
+
+Mount Option
+ro,rw,noexec,nosuid
+
+
+# Edit mount Options
+$ sudo mount -o rw,noexec,nosuid [PARTITION] [MOUNT_POINT]
+eg.
+
+$ sudo mount -o rw,noexec,nosuid /dev/sde2/ /mnt
+
+# Edit mount options with remount option
+$ sudo mount -o remount,rw,noexec,nosuid [PARTITION] [MOUNT_POINT]
+eg.
+
+$ sudo mount -o remount,rw,noexec,nosuid /dev/sde2 /mnt
+
+# Edit alloc size
+$ sudo mount -o allocsiz=32K,rw /dev/sde2 /mnt
+
+
+
+# Mount at boot time -> fstab
+$ sudo vi /etc/fstab
+
+content
+/dev/sde2 /mnt ext4 defaults,ro 0 2
+
+defaults option -> rw, suid, dev, exec, auto, nouser, async
