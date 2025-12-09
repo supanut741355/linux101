@@ -33,8 +33,8 @@ $ sudo umount /mnt
 #Config mount nfs at boot time
 $ sudo vi /etc/fstab
 content
-[HOST]:[PATH_TO_REMOTE_DIR] [PATH_TO_LOCAL_DIR] [OPTION] 0 0
-127.0.0.1:/etc /mnt defaults 0 0
+[HOST]:[PATH_TO_REMOTE_DIR] [PATH_TO_LOCAL_DIR] nfs [OPTION] 0 0
+127.0.0.1:/etc /mnt nfs defaults 0 0
 
 # apply config
 $ sudo systemctl daemon-reload
