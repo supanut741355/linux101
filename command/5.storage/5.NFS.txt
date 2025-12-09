@@ -15,7 +15,7 @@ eg.
 /nfs/disk1/backup server1.example.com -> share all file to all others computers
 
 #Apply Config
-$ sudo exports -r
+$ sudo exportfs -r
 
 
 ----------------------------NFS Client----------------------------
