@@ -1,0 +1,31 @@
+Config swap
+
+List all swap
+$ sudo swapon --show
+
+----------------------------------------swap partition----------------------------------------
+
+Create swap partition
+$ sudo swapon [PARTITION]
+eg.
+
+$ sudo swapon /dev/sde3
+
+
+Remove swap partition
+$ sudo swapoff [PARTITION]
+eg.
+
+$ sudo swapoff /dev/sde3
+
+
+----------------------------------------swap file----------------------------------------
+
+//make space for swap
+$ sudo dd if=/dev/zero of=/swap bs=1M count=1000000
+
+
+//create swap file
+$sudo swapon [FILE_SWAP]
+
+$ sudo swapon /swap
