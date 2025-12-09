@@ -1,0 +1,18 @@
+
+Creat mount point
+$ sudo mount [PARTITION] [MOUNT_POINT]
+eg.
+
+$ sudo mount /dev/sde2 /mnt
+
+
+$ sudo umont [MOUNT_POINT]
+eg. sudo umont /mnt
+
+
+# Set up mount at boot time
+$ sudo vi /etc/fstab
+content
+
+[PARTITION] [MOUNT_POINT] [FS_TYPE] [OPTION] [DUMP_MODE] [SCAN_CURRUPT]
+/dev/sde2 /mnt  ext4  defaults 0 2
