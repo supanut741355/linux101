@@ -1,0 +1,41 @@
+Share file between server
+
+----------------------------NFS Server----------------------------
+$ sudo apt install nfs-kernel-server
+
+#Config nfs server
+$ sudo vi /etc/exports
+content
+[PATH]  [IP/HOSTNAME1](OPTION) [IP/HOSTNAME2](OPTION) 
+eg.
+/nfs/disk1/backup server1.example.com server2.exmaple.com
+/nfs/disk1/backup 10.0.0.9 10.0.0.10
+/nfs/disk1/backup 10.0.10.0/24 10.0.11.0/24
+
+/nfs/disk1/backup server1.example.com -> share all file to all others computers
+
+#Apply Config
+$ sudo exports -r
+
+
+----------------------------NFS Client----------------------------
+$ sudo apt install nfs-common
+
+#Mount nfs share
+$ sudo mount [IP/HOSTNAME]:[PATH_TO_REMOTE_DIR] [PATH_TO_LOCAL_DIR]
+eg.
+$ sudo mount 127.0.0.1:/etc /mnt
+
+#Unmount nfs share
+$ sudo umount [PATH_TO_LOCAL_DIR]
+$ sudo umount /mnt
+
+#Config mount nfs at boot time
+$ sudo vi /etc/fstab
+content
+[HOST]:[PATH_TO_REMOTE_DIR] [PATH_TO_LOCAL_DIR] [OPTION] 0 0
+127.0.0.1:/etc /mnt defaults 0 0
+
+# apply config
+$ sudo systemctl daemon-reload
+
