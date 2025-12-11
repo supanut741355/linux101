@@ -1,0 +1,27 @@
+Tool -> openssl
+
+#help & man
+$ openssl
+
+$ man openssl req
+$ man openssl x509
+
+
+
+#Create Certificate Signing Request (CSR)
+$ sudo openssl req -newkey [ALGO:BIT] -keyout [PRIVATEKEY] -out [CERTIIFICATE]
+eg.
+$ sudo openssl req -newkey rsa:2048 -keyout key.pem -out req.pem
+
+
+#Create Self-signed certificate
+$ sudo openssl req [CERT_TYPE] -newkey [ALGO:BIT] -keyout [PRIVATE].key -out [CERTIFICATE].crt
+eg.
+$ sudo openssl req -x509 -newkey rsa:4096 -keyout myprivate.key -out mycertificate.crt
+
+
+#Inspect detail of certificate
+$ sudo openssl [CERT_TYPE] -in [CERTIFICATE] -text
+eg.
+$ sudo openssl x509 -in mycertificate.crt -text
+
