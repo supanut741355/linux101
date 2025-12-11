@@ -1,0 +1,31 @@
+# list
+$ ls
+$ ls -lah
+
+
+#Create file
+$ touch [PATH_TO_FILE]
+$ sudo vi [PATH_TO_FILE]
+$ echo "yoyoyo" > [PATH_TO_FILE]
+
+#Create directory
+$ mkdir [PATH_TO_DIRECTORY]
+
+#Change directory
+$ cd [PATH_TO_DIRECTORY]
+
+#COPY
+$ cp [PATH_TO_SOURCE] [PATH_TO_DESTINATION]
+
+#Copy all file in directory
+$ cp -r [PATH_TO_DIRECTORY] [PATH_TO_DESTINATION]
+
+
+#MOVE
+$ mv [PATH_TO_SOURCE] [PATH_TO_DESTINATION]
+
+#Remove file
+$ rm [PATH_TO_FILE]
+
+#Remove directory
+# rm -rf [PATH_TO_DIRECTORY]
