@@ -1,0 +1,24 @@
+#Find option of command
+$ [CMD] --help
+eg.
+
+$ journalctl --help
+
+
+#Find Syntax (synopsis) and example of command
+$ man [CMD]
+
+$ man ls
+
+
+#Find comand with keyword
+$ apropos -s [NUM] [KEYWORD]
+
+#Update database
+$ sudo mandb
+
+#Suggest 
+$ [CMD] 2xTAB
+
+#Auto-complete
+$ tab
