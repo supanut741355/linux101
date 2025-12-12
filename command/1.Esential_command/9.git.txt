@@ -1,0 +1,27 @@
+Git
+
+#install software
+$ sudo apt install git 
+
+#Set up git
+$ git config --global user.name "[USERNAME]"
+$ git config --global user.email "[EMAIL]"
+
+# Util git command
+$ git status
+$ git add [FILE]
+$ git reset [FILE]
+$ git commit -m "[COMMEND]"
+$ git log
+$ git show [COMMIT_ID]
+
+# Git branch
+$ git branch                        -> list all branch
+$ git branch [BRANCH_NAME]          -> Creat new branch
+$ git branch --delete [BRANCH_nAME] -> Delete branch
+$ git checkout [TARGET_BRANCH]      -> Switch to target branch
+$ git merge [TARGET_BRACNCH]        -> Merge branch
+
+# Remote
+$ git remote add origin [URL]
+$ git push origin master
