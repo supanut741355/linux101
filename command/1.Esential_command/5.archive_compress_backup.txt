@@ -1,0 +1,32 @@
+Archive (tar)
+$ sudo tar [OPTION] [ARCHIVE_NAME]
+
+#Create compress / tar file
+$ sudo tar cf [ARCHIVE_NAME] [FILE1] [FILE2]
+
+
+#List files in archive
+$ sudo tar tf [ARCHIVE_NAME]
+
+#List file in dir
+$ sudo tar -tf [ARCHIVE_NAME] -c [PATH_TO_DIR]
+
+------------------------------------------------------------
+
+Compress (zip)
+$ zip [FILE1] [FILE2]
+
+$ zip -k [FILE1] [FILE2]
+
+Uncompress 
+$ unzip [PATH_TO_FILE].gzip
+
+------------------------------------------------------------
+
+Backup (rsync to remote)
+$ rsync [OPTION] [PATH_TO_LOCAL_FILE / PATH_TO_LOCAL_DIR] [HOST]:[PATH_TO_REMOTE_DIR]
+eg.
+
+$ rsync -a /pictures nutx@192.168.1.137:/home/nutx/pictures
+
+
