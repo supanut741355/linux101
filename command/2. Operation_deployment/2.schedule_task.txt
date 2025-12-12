@@ -1,0 +1,17 @@
+Tool -> Crontab
+
+$ cat /etc/crontab                                -> example of crontab
+[][][][][][] [USER/CMD] [ARRGUMENT/SHELL_SCRIPT]  -> cron to run task
+
+$ crontab -e                                      -> Create / edit crontab for current user
+
+$ crontab -e -u [USERNAME]                        -> Create / edit crontab for user
+
+$ crontab -l                                      -> List crontab of current user
+
+$ crontab -l -u [USERNAME]                        -> List crontab of other user
+
+$ crontab -r                                      -> remove crontab of current user
+
+$ crontab -r -u [USERNAME]                        -> remove crontab of other user
+
