@@ -1,9 +1,38 @@
 Bash script VS Shell script
-Shell has multiple
+Shell has multiple types
 - sh
 - bash
 - zsh
 - dash
 
-
 $ cat /etc/shells
+
+
+
+Bash script-------------------------------------------------
+# 3 Step to create script and run it
+1. create bash script
+$ sudo vi [FILE].sh      
+
+content
+#!/bin/[SHELL_TYPE]    -> defind this file will execute by shell type xxxx
+date > /tmp/timedate
+
+
+2. Add permission
+$ sudo chmod +rx [FILE].sh
+
+
+3. Run scrit
+$ ./[FILE].sh
+
+
+
+Bash script
+- variable
+- if condition
+- loop
+
+Exit status
+0   => successful
+> 1 => error
