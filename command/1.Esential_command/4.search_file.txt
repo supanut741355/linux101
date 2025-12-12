@@ -1,0 +1,46 @@
+$ find [DIR] [OPTION]
+
+#find file with name *.png in current dir
+$ find -name '*.png' 
+
+#find file with name *.png in /usr/share
+$ find /usr/share -name '*.png'
+
+
+# option filter with type of file
+$ find [DIR] -type [TYPE]
+$ find [DIR] -type f  -> filter only type file
+$ find [DIR] -type d  -> filter only type dir
+
+
+# option filter with file name
+$ find [DIR] -name '[SEARCH_PATTERN]'
+
+
+# option filter with size file
+$ find [DIR] -size 512k     -> exactly size 
+$ find [DIR] -size 10M
+$ find [DIR] -size 2G
+$ find [DIR] -size +512k    -> size more than 512k
+$ find [DIR] -size -512k    -> size less than 512k
+
+
+# option filer with permission
+$ find [DIR] -perm [OCTAL]
+$ find [DIR] -perm 600  = \600     -> exactly file that has permission 600
+$ find [DIR] -perm -600            -> at least the permission bits 600 (600++ okay)
+
+
+
+# option modify time (min)
+$ find [DIR] -mmin [MIN]
+$ find [DIR] --min -5       -> within the last 5 minutes
+$ find [DIR] --min 5        -> exactly 5 minutes ago.
+$ find [DIR] --min +5       -> more than 5 minutes ago.
+
+# option Change time (day)
+$ find [DIR] --mtime 0      -> change in this day
+$ find [DIR] --mtime -1      -> change cover in 1 day
+$ find [DIR] --mtime +2     -> change more than 2 days
+
+
