@@ -1,0 +1,9 @@
+Bash script VS Shell script
+Shell has multiple
+- sh
+- bash
+- zsh
+- dash
+
+
+$ cat /etc/shells
