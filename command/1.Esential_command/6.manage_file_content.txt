@@ -1,0 +1,36 @@
+Manage file content
+
+------------------------------View------------------------------
+$ cat [FILE]        -> up to bot
+$ tac [FILE]        -> bot to up
+
+$ less [FILE]       -> view file with pager style
+
+
+------------------------------Edit------------------------------
+
+$ vi [FILE]
+
+option
+/[KEYWORD]   -> search word in content
+:[NUM]       -> move to line number
+yy           -> copy a line
+dd           -> cut a line
+p            -> place a line
+
+
+
+------------------------------Transform-------------------------
+
+$ sed 's/[OLD_WORD]/[NEW_WORd]' [file]      -> replace new word at 1 st column
+$ set 's/[OLD_WORd]/[NEW_WORd]/g' [file]    -> replace all new word
+
+$ cut -d '[ตัดตัด]' -f [COLUMN] [FILE]        -> ตัดเอาคำของแต่ละบันทัด ที่ filter ด้วยตัวตัดคำ และ column
+
+$ uniq [FILE]                               -> Delete duplica word of each line
+
+$ sort [FILE]                               -> Sort ASC, DESC
+$ sort [FILE] | uniq                        -> Chain sort and uniq
+
+------------------------------Compare---------------------------
+$ diff [FILE1] [FILE2]
